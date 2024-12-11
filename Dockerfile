@@ -15,7 +15,7 @@ COPY . /app/
 WORKDIR /app/
 
 # Install Python dependencies
-RUN pip3 install --no-cache-dir --upgrade -r requirements.txt
+RUN pip3 install --no-cache-dir --upgrade -r installer
 
 # Start both the Gunicorn server and the main Python script using supervisord
 CMD gunicorn app:app --daemon && python3 modules/main.py
